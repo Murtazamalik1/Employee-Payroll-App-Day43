@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Payroll</title>
     <link rel="Stylesheet" href="../css/empPayroll.css">
+    <script defer src="../js/Payroll-form.js" ></script>
+    <script src="../js/EmployeePayroll.js"></script>
 </head>
 <style>
     .button-parent{
@@ -51,7 +53,12 @@
     .resetButton:hover{
         background-color: darkgreen;
     }
-
+    error-output{
+    margin-left: 10px;
+    font-size: 10px;
+    font-style: italic;
+    color: red;
+    }
 </style>
 <body>
     <header class="header_content header">
@@ -62,12 +69,14 @@
             </div>
         </div>
     </header>
-    <div class="form-content">
-        <form class="form" action="#" onsubmit="sava(event);return false">
+    <div id="formId" class="form-content">
+        <form class="form" action="#" onreset="resetForm()" onsubmit="sava()">
             <div class="form-head"> <span id="first">Employee</span> Payroll <span id="Third">Form</span></div>
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
                 <input class="input" type="text" id="name"name="name" placeholder="Enter Your Name" required>
+                <error-output class="text-error" for="text"></error-output>
+                
             </div>
             <div class="row-content">
                 <label class="label text" for="profile">image Profile</label>
@@ -178,6 +187,16 @@
                         <option value="Oct">October</option>
                         <option value="Nov">November</option>
                         <option value="Dec">December</option>
+                    </select>
+                    <select id="year" name="year">
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
                     </select>
                 </div>
             </div>
